@@ -32,6 +32,10 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, 
 
     public DbSet<TodoItem> TodoItems => Set<TodoItem>();
 
+    public DbSet<MusicTrack> MusicTracks => Set<MusicTrack>();
+
+    public DbSet<BorrowedTrack> BorrowedTracks => Set<BorrowedTrack>();
+
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
         foreach (var entry in ChangeTracker.Entries<AuditableEntity>())

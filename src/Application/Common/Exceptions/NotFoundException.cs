@@ -22,3 +22,26 @@ public class NotFoundException : Exception
     {
     }
 }
+
+public class NotASingleEntityException : Exception
+{
+    public NotASingleEntityException()
+        : base()
+    {
+    }
+
+    public NotASingleEntityException(string message)
+        : base(message)
+    {
+    }
+
+    public NotASingleEntityException(string message, Exception innerException)
+        : base(message, innerException)
+    {
+    }
+
+    public NotASingleEntityException(string name, object key)
+        : base($"Entity \"{name}\" ({key}) was not found.")
+    {
+    }
+}
